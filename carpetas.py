@@ -1,5 +1,14 @@
 import os
 import shutil
+def crear_carpeta(carpeta):
+    os.mkdir(carpeta)
+    print("la carpeta", carpeta, "ha sido creada con éxito")
+def escribir_texto(texto,contenido):
+    f = open(texto, "w")
+    f.write(contenido)
+    f.close()
+    shutil.move(texto, carpeta)
+    print("El archivo", texto, "ha sido creado con exito")
 option=1
 while option>0:
     print("""¡Bienvenido! Seleccione la acción que desea realizar:
@@ -12,20 +21,15 @@ while option>0:
     while option==1:
         suboption=0
         carpeta = input("Ingrese el nombre de la carpeta: ")
-        os.mkdir(carpeta)
-        print("la carpeta",carpeta,"ha sido creada con éxito")
+        crear_carpeta(carpeta)
         print("""¿Que desea hacer en esta carpeta?
         1: Crear un archivo
         2: Salir de la carpeta""")
         suboption=int(input("Digite la opción: "))
         while suboption==1:
             texto=input("Ingrese el nombre del archivo: ")
-            f=open(texto,"w")
             contenido=input("A continuación, escriba el contenido del archivo:\n")
-            f.write(contenido)
-            f.close()
-            shutil.move(texto, carpeta)
-            print("El archivo",texto,"ha sido creado con exito")
+            escribir_texto(texto,contenido)
             print("""¿Desea crear otro archivo?
             1: Si
             2: No""")
@@ -43,12 +47,8 @@ while option>0:
             suboption = int(input("Digite la opción: "))
             while suboption == 1:
                 texto = input("Ingrese el nombre del archivo: ")
-                f = open(texto, "w")
                 contenido = input("A continuación, escriba el contenido del archivo:\n")
-                f.write(contenido)
-                f.close()
-                shutil.move(texto, carpeta)
-                print("El archivo", texto, "ha sido creado con exito")
+                escribir_texto(texto,contenido)
                 print("""¿Desea crear otro archivo?
                 1: Si
                 2: No""")
