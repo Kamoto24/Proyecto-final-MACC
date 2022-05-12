@@ -35,21 +35,21 @@ def jugar():
             cv2.imshow("GANASTE",piedra)
             cv2.waitkey(0)
             cv2.destroyAllWindows() 
-            return 'You won!'
+            return 'GANASTEE!'
         
         piedra=cv2.imread("perdiste.png",1)
         cv2.imshow("PERDISTE",piedra)
         cv2.waitkey(0)
         cv2.destroyAllWindows()
     
-        return 'You lost!'
+        return 'PERDISTEE!'
     
         if jugador == ordenador:
             piedra=cv2.imread("empate.png",1)
             cv2.imshow("EMPATE",piedra)
             cv2.waitkey(0)
             cv2.destroyAllWindows()
-            return 'It\'s a tie'
+            return 'EMPATEE'
 
     
     
