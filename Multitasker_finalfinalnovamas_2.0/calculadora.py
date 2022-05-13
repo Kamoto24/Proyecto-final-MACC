@@ -1,4 +1,4 @@
-from tkinter import Tk, Text, Button, END, re
+from tkinter import Tk, Text, Button, END, re  #Se importa la libreria Tkinter y los módulos a usar.
 
 
 class Interfaz:
@@ -23,6 +23,7 @@ class Interfaz:
                 self.operacion = ""
                 self.limpiarlacaja()
         else:
+            #si el valor de escribir es True, se agrega el str a la caja de texto.
             self.operacion += str(texto)
             self.escribirenlacaja(texto)
         return
@@ -73,11 +74,12 @@ class Interfaz:
         boton_num_15 = self.crearlosbotones("+")
         boton_num_16 = self.crearlosbotones("-")
         boton_num_17 = self.crearlosbotones("=", escribir=False, ancho=7, alto=2)
-
+##Se almacenan los botones, para posteriormente ubicarlos en la ventana de la calculadora 
         botones = [boton_num_1, boton_num_2, boton_num_3, boton_num_4, boton_num_5, boton_num_6, boton_num_7,
                    boton_num_8, boton_num_9, boton_num_10, boton_num_11, boton_num_12, boton_num_13, boton_num_14,
                    boton_num_15, boton_num_16, boton_num_17]
         contador = 0
+        ##Tkinter posee un método llamado grid, que me divide la ventana en filas en columnas, con los ciclos for lo que hacemos es ir ubicando automaticamente los botones teniendo como ayuda el grid.
         for fila in range(1, 5):
             for columna in range(4):
                 botones[contador].grid(row=fila, column=columna)
