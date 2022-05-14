@@ -340,7 +340,12 @@ def idioma_imagen(data): #Funcion pide al usuario la imagen para extraer el text
         hidelist.append(opcion2)
 def lista_imagenes(): #Función que pide al usuario la imagen que desee
     hide()
-    label1 = tk.Label(ventana, text="Ingrese el nombre de la imagen (junto con su extensión)", font=fonta)
+    lista = leer_imagen.listaImagen()
+    if lista == None:
+        texto = "No hay imágenes en la carpeta"
+    else:
+        texto = "Las imágenes en la carpeta son: \n {0} \n Escriba el nombre de la imagen que quiere usar \n(junto con su extención) ".format(lista)
+    label1 = tk.Label(ventana, text= texto, font=fonta)
     label1.pack(pady=10)
     hidelist.append(label1)
     entry1 = tk.Entry(ventana)
