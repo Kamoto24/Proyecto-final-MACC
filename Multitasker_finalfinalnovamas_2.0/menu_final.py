@@ -1,4 +1,3 @@
-import time #Se importa el modulo time para separar algunas acciones en su ejecución
 import tkinter as tk 
 from tkinter import ttk #Se importa tkinter y ttk para la creación de todo lo que contine la interfaz gráfica
 import carpetas 
@@ -386,6 +385,5 @@ ttk.Style(ventana).configure('TButton', font=(fonta))
 actualoption=0 #Variable para saber que opción se encuentra en uso
 hidelist=[] #Lista de los labels, botones y entradas a eliminar
 menu() #Llama a la funcion menu para crearlo
-time.sleep(1) #Delay de 1 segundo par separar ambas ventanas
 popup(intro) #Llamado a la función popup para crear una ventana con un texto introductorio previamente declarado
 ventana.mainloop()
