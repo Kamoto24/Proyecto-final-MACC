@@ -18,14 +18,14 @@ def verArchivos(extension="todas"):
     return archivosAMostrar
 
 
-def listaImagen(carpeta):
-    archivosJPG = verArchivos(".jpg",carpeta)
-    archivosPNG = verArchivos(".png",carpeta)
+def listaImagen():
+    archivosJPG = verArchivos(".jpg")
+    archivosPNG = verArchivos(".png")
 
     if archivosJPG == [] and archivosPNG == []:
-        return "En la carpeta no hay archivos con las extensiones jpg o png"
+        return None
     else:
-        return "Las imágenes en esta carpeta son: ", archivosJPG, " y ", archivosPNG
+        return  archivosJPG, archivosPNG
 
 def idiomaImagen():
         opcion = int(input("Seleccione el idioma \n 1. Español \n 2. Inglés\n"))
